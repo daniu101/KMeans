@@ -11,4 +11,8 @@ k = 4
 
 dataMat = mat(load_dataset(FILE_DIR))
 myCentroids, clustAssing= kMeans(dataMat,k)
+print("myCentroids:")
+print(myCentroids)
+print("clustAssing:")
+print(clustAssing)
 show(dataMat, k, myCentroids, clustAssing)  
