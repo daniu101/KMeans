@@ -4,10 +4,6 @@
 from numpy import *
 import numpy as np
 
-#计算欧几里得距离
-def dist_euclidean(vector_a, vector_b):
-    return sqrt(sum(power(vector_a - vector_b, 2)))
-
 #随机生成初始k个质心
 def create_cent(dataSet, k):
     n = shape(dataSet)[1] # 矩阵列长度
@@ -18,6 +14,10 @@ def create_cent(dataSet, k):
         rangeJ = float(max(array(dataSet)[:,j]) - minJ)
         centroids[:,j] = minJ + rangeJ * random.rand(k,1)
     return centroids
+
+#计算欧几里得距离
+def dist_euclidean(vector_a, vector_b):
+    return sqrt(sum(power(vector_a - vector_b, 2)))
     
 def kMeans(dataSet, k, distMeas=dist_euclidean, create_cent=create_cent):
     m = shape(dataSet)[0] # 矩阵行长度
